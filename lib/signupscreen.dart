@@ -1,3 +1,4 @@
+import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,8 +47,6 @@ class SignupScreenState extends State<SignupScreen> {
             //controller: _firstnameController,
 
             decoration: InputDecoration(
-
-
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
 
@@ -57,14 +56,12 @@ class SignupScreenState extends State<SignupScreen> {
             Color(0xFF31F920)
 
                */
-                  borderRadius: BorderRadius.circular(26)
-              ),
+                  borderRadius: BorderRadius.circular(26)),
 
               // focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
 
               hintText: "Enter Full Name",
               labelText: "Full Name",
-
             ),
           ),
         ),
@@ -187,7 +184,10 @@ class SignupScreenState extends State<SignupScreen> {
             child: ElevatedButton(
               //  onPressed: signup
 
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.authentication);
+
+              },
               child: AnimatedContainer(
                 duration: Duration(seconds: 0),
                 height: 62.5,

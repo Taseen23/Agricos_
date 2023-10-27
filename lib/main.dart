@@ -1,5 +1,6 @@
 import 'package:agricos/signupscreen.dart';
 import 'package:agricos/trigger.dart';
+import 'package:agricos/utill/authenticationscreen.dart';
 import 'package:agricos/utill/farmingdetails.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FarmdScreen(),
+      home: triggerScreen(),
       routes: {
 
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginscreen: (Context) => LoginScreen(),
         MyRoutes.signupscreen: (Context) => SignupScreen(),
         MyRoutes.farmingcreen: (Context) => FarmdScreen(),
+        MyRoutes.authentication: (Context) => AuthenticateScreen(),
 
 
 
