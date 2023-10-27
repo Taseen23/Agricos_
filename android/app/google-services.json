@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "667511645544",
+    "project_id": "agricios-f987a",
+    "storage_bucket": "agricios-f987a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667511645544:android:eb71e1a4aa3428d11de2dd",
+        "android_client_info": {
+          "package_name": "com.example.agricos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCTgaudNW-rXxCHWjL3zfIyjuCuCl0zWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
