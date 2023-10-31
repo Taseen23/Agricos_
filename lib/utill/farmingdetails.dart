@@ -1,3 +1,4 @@
+import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,48 +13,61 @@ class FarmdScreenState extends State<FarmdScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        child:SingleChildScrollView( child: Column(
+        child: SingleChildScrollView(
+            child: Column(
       children: [
         Container(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20.0,
-              ),
+            child: Column(
+          children: [
+            Row(children: [
+              //width: 20,
+              ElevatedButton.icon(
 
-            Image.asset(
-                "assest/Images/JAGO_KISAN-removebg-preview copy.png",
-                height: 316,
-                width: 354,
-              ),
-
-              Positioned(
-                top: 10, // Adjust the top and left values to position the text
-                left: 10,
-                child: Text(
-                  "Farming Details",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
+                icon: Icon(
+                  Icons.arrow_circle_left,
+                  color: Color(0xFF04FF2F),
+                  size: 30.0,
+                ),
+                label: Text(""),
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.authentication);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFFFFFFF)
                 ),
               ),
+              //  Icon(Icons.arrow_circle_left),
 
+              Image.asset(
+                "assest/Images/JAGO_KISAN-removebg-preview copy.png",
+                height: 316,
+                width: 250,
 
+                //width: 354,
+              ),
+            ]),
 
-              //Text("Farming Details"),
+            Positioned(
+              top: 10,
+              // Adjust the top and left values to position the text
+              left: 10,
+              child: Text(
+                "Farming Details",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
 
+            //Text("Farming Details"),
           ],
-        )
-
-
-
-        ),
+        )),
 
         Container(
 
-          /*
+            /*
           child: Text(
             "Farming Details",
             style: TextStyle(
@@ -64,7 +78,7 @@ class FarmdScreenState extends State<FarmdScreen> {
           ),
 
            */
-        ),
+            ),
 
         //SizedBox(height: 200.0,),
 
@@ -256,7 +270,7 @@ class FarmdScreenState extends State<FarmdScreen> {
           ),
         ),
         SizedBox(
-          height: 20.0,
+          height: 40.0,
         ),
 
         SizedBox(
@@ -266,56 +280,28 @@ class FarmdScreenState extends State<FarmdScreen> {
             height: 41,
             // duration: Duration(seconds: 1),
             child: ElevatedButton(
-              //  onPressed: signup
-
-              onPressed: () {},
-              child: AnimatedContainer(
-                duration: Duration(seconds: 0),
-                height: 62.5,
-                width: 329,
-                alignment: Alignment.center,
-                child: Container(
-                  height: 29,
-                  width: 80,
-                  child: Text(
-                    "Submit",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  //  Image.asset("assest/Images/arrow.jpg"),
-                  //  child: Icon(Icons.arrow_back_outlined),
-
-                  borderRadius: BorderRadius.circular(30),
-                  color: Color(0xFF16FC02),
-
-                  //shape: BoxShape.rectangle,
-
-                  //borderRadius: BorderRadius.circular(changebutton?50:8),
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.farmingcreen);
+              },
+              child: Text(
+                "Submit",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
                 ),
               ),
-
-              //child: Text('Next'),
-
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff89EE51),
-
-                //Color(0xffeb6f1c),
-              ),
-
-              // decoration: BoxDecoration(
-              //  borderRadius: BorderRadius.circular(30),
-              //   color: Color(0xFF16FC02),
+                  primary: Color(0xFF89EE51),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(45))),
             ),
           ),
         ),
+        SizedBox(
+          height: 40.0,
+        ),
       ],
-        )
-    )
-    );
+    )));
   }
 }

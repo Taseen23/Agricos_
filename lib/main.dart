@@ -3,12 +3,15 @@ import 'package:agricos/trigger.dart';
 import 'package:agricos/utill/authenticationscreen.dart';
 import 'package:agricos/utill/farmingdetails.dart';
 import 'package:agricos/utill/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'loginscreen.dart';
 
-void main() {
+void main()  async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -18,6 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: triggerScreen(),
@@ -29,7 +33,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.signupscreen: (Context) => SignupScreen(),
         MyRoutes.farmingcreen: (Context) => FarmdScreen(),
         MyRoutes.authentication: (Context) => AuthenticateScreen(),
-
 
 
 

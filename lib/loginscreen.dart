@@ -11,13 +11,19 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
+
+
         child: Column(children: [
+          Row(children:[
+
+          ]
+          ),
+
       Image.asset(
-        "assest/Images/JAGO_KISAN-removebg-preview 1.jpg",
+        "assest/Images/JAGO_KISAN-removebg-preview copy.png",
         height: 255,
         width: 250,
       ),
-
       Container(
         width: 312, // Set the width of the Container
         height: 422, // Set the height of the Container
@@ -91,6 +97,37 @@ class LoginScreenState extends State<LoginScreen> {
               ), // default text style
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(children: [
+            SizedBox(
+              width: 113,
+            ),
+            Image.asset(
+              "assest/Images/facebook.jpg",
+              width: 21,
+              height: 20,
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Image.asset(
+              "assest/Images/Google.jpg",
+              width: 21,
+              height: 20,
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Image.asset(
+              "assest/Images/Tweeter.jpg",
+              width: 21,
+              height: 20,
+            ),
+
+          ])
+          /*
           Image.asset(
             "assest/Images/facebook.jpg",
             width: 21,
@@ -107,65 +144,30 @@ class LoginScreenState extends State<LoginScreen> {
             height: 20,
           ),
 
+           */
         ]),
-
-        /*
-            child: ClipOval(
-            child: Container(
-              width: 129,
-              height: 150,
-                alignment: Alignment.topCenter,
-
-                child:
-                    TextFormField(
-
-                    )
-
-                //Image.asset("assest/Images/Farmer image for profile 1.jpg"),
-
-            ),
-          ),
-
-             */
       ),
-          Container(
-            width: 231,
-            height: 49,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MyRoutes.signupscreen);
-              },
-              child: AnimatedContainer(
-                duration: Duration(seconds: 1),
-                height: 62.5,
-                width: 329,
-                alignment: Alignment.center,
-                child: Text(
-                  "LOGIN",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                  color: Color(0xFF16FC02),
-
-
-                  //shape: BoxShape.rectangle,
-
-                  //borderRadius: BorderRadius.circular(changebutton?50:8),
-                ),
-              ),
-              // onPressed: ,
+      Container(
+        width: 231,
+        height: 49,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.signupscreen);
+          },
+          child: Text(
+            "LOGIN",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
             ),
           ),
-
-
-
-
-      //Image.asset("assest/Images/pic3.png")
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF16FC02),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30))),
+        ),
+      )
     ]));
   }
 }

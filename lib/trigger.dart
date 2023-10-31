@@ -14,12 +14,16 @@ class triggerScreen extends StatelessWidget {
           'Welcome To',
           textAlign: TextAlign.center,
           //overflow: TextOverflow.ellipsis,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+              color: Color(0xFF0D5E06),
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 1.0),
         Image.asset("assest/Images/pic1.png",
             //scale: 0.8,
-            height: 223, width: 232),
+            height: 223,
+            width: 232),
 
         // Text("Welcome To"),
 
@@ -37,16 +41,13 @@ class triggerScreen extends StatelessWidget {
                 color: Color(0xFF2D6F09),
               ),
             )),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, MyRoutes.loginscreen);
-
-          },
-          child: AnimatedContainer(
-            duration: Duration(seconds: 1),
-            height: 62.5,
-            width: 329,
-            alignment: Alignment.center,
+        Container(
+          height: 62.5,
+          width: 329,
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, MyRoutes.loginscreen);
+            },
             child: Text(
               "Get Started",
               style: TextStyle(
@@ -55,14 +56,9 @@ class triggerScreen extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            decoration: BoxDecoration(
-              color: Color(0xFF31F920),
-              shape: BoxShape.rectangle,
-
-              //borderRadius: BorderRadius.circular(changebutton?50:8),
-            ),
+            style: ElevatedButton.styleFrom(
+                primary: Color(0xFF31F920), shape: RoundedRectangleBorder()),
           ),
-          // onPressed: ,
         ),
       ],
     )));
