@@ -1,3 +1,4 @@
+import 'package:agricos/utill/authenticationscreen.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,13 +9,19 @@ import 'done.dart';
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
+
   @override
   SignupScreenState createState() => SignupScreenState();
 }
 
 class SignupScreenState extends State<SignupScreen> {
+  static String verify="";
+
+  final TextEditingController phoneNumberController = TextEditingController();
+  var phone='';
 
 
+ /*
   TextEditingController _codecontroller = new TextEditingController();
   String phoneNumber = "",
       data = "";
@@ -83,6 +90,8 @@ class SignupScreenState extends State<SignupScreen> {
           timeout: Duration(seconds: 45));
     } catch (e) {}
   }
+
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -172,6 +181,11 @@ class SignupScreenState extends State<SignupScreen> {
             SizedBox(
               width: 300,
               child: TextFormField(
+                keyboardType: TextInputType.phone,
+                onChanged: (value){
+                  phone=value;
+                },
+                //controller: phoneNumberController,
                 //controller: _emailController,
                 /* onChanged: (value) {
                   setState(() {
@@ -258,10 +272,32 @@ class SignupScreenState extends State<SignupScreen> {
               child: Container(
                 width: 320,
                 height: 41,
+
                 child: ElevatedButton(
                   //  onPressed: signup
-                  onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.authentication);
+                  onPressed: () async{
+                    await FirebaseAuth.instance.verifyPhoneNumber(
+                        phoneNumber: '+88${phone}',
+                        verificationCompleted: (PhoneAuthCredential credential){},
+                        verificationFailed: (FirebaseAuthException e){},
+                        codeSent: (String verificationId, int? resendToken){
+                          //AuthenticateScreen.verify=verificationId;
+                         // Navigator.pushNamed(context, MyRoutes.authentication);
+                          Navigator.pushNamed(context, MyRoutes.authentication, arguments: phone);
+
+                        },
+                        codeAutoRetrievalTimeout: (String verification){},
+                    );
+                    /*
+                    onSubmitted: (text) {
+                      // When the user presses enter, navigate to the OTP page and pass the phone number.
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => AuthenticateScreen(phoneNumber: text),
+                      ));
+                    };
+
+                     */
+                   // Navigator.pushNamed(context, MyRoutes.authentication);
                   },
                   child: Text(
                     "Next",

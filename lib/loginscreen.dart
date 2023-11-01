@@ -11,6 +11,7 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
+      child:  SingleChildScrollView(
 
 
         child: Column(children: [
@@ -168,6 +169,6 @@ class LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(30))),
         ),
       )
-    ]));
+    ])));
   }
 }

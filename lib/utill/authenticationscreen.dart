@@ -1,15 +1,24 @@
 import 'package:agricos/utill/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticateScreen extends StatefulWidget {
-  const AuthenticateScreen({super.key});
+
+
+
+
+
+
+  const AuthenticateScreen({super.key, required phoneNumber});
 
   @override
   AuthenticateScreenState createState() => AuthenticateScreenState();
 }
 
 class AuthenticateScreenState extends State<AuthenticateScreen> {
+  late final String phoneNumber;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -183,6 +192,8 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                 height: 42,
                 child: ElevatedButton(
                   onPressed: () {
+                    //PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthenticateScreen.verify. smsCode, smsCode: '');
+
                     Navigator.pushNamed(context, MyRoutes.farmingcreen);
                   },
                   child: Text(
