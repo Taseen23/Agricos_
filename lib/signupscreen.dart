@@ -16,6 +16,7 @@ class SignupScreen extends StatefulWidget {
 
 class SignupScreenState extends State<SignupScreen> {
   static String verify="";
+  int? _resendToken;
 
   final TextEditingController phoneNumberController = TextEditingController();
   var phone='';
@@ -280,12 +281,15 @@ class SignupScreenState extends State<SignupScreen> {
                         phoneNumber: '+88${phone}',
                         verificationCompleted: (PhoneAuthCredential credential){},
                         verificationFailed: (FirebaseAuthException e){},
-                        codeSent: (String verificationId, int? resendToken){
-                          //AuthenticateScreen.verify=verificationId;
+                        codeSent: (String verificationId, int? resendToken) async{
+
+                          AuthenticateScreen.verify=verificationId;
+                          _resendToken = resendToken;
                          // Navigator.pushNamed(context, MyRoutes.authentication);
                           Navigator.pushNamed(context, MyRoutes.authentication, arguments: phone);
 
                         },
+                      timeout: const Duration(seconds: 25),
                         codeAutoRetrievalTimeout: (String verification){},
                     );
                     /*

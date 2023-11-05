@@ -21,6 +21,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var code="";
     return Material(
         child: SingleChildScrollView(
             child: Column(children: [
@@ -166,6 +167,13 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                   ),
                 ],
               ),
+              Pinput(
+                length: 6,
+                showCursor: true,
+                onChanged: (value){
+                  code=value;
+                }
+              ),
 
               SizedBox(
                 height: 40,
@@ -191,8 +199,9 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                 width: 338,
                 height: 42,
                 child: ElevatedButton(
-                  onPressed: () {
-                    //PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthenticateScreen.verify. smsCode, smsCode: '');
+                  onPressed: () async {
+                    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthenticateScreen.verify, smsCode: code);
+                   // await auth.signInWithCredential(credential);
 
                     Navigator.pushNamed(context, MyRoutes.farmingcreen);
                   },
