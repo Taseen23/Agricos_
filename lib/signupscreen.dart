@@ -283,7 +283,7 @@ class SignupScreenState extends State<SignupScreen> {
                         verificationFailed: (FirebaseAuthException e){},
                         codeSent: (String verificationId, int? resendToken) async{
 
-                          AuthenticateScreen.verify=verificationId;
+                          //AuthenticateScreen.verify=verificationId;
                           _resendToken = resendToken;
                          // Navigator.pushNamed(context, MyRoutes.authentication);
                           Navigator.pushNamed(context, MyRoutes.authentication, arguments: phone);

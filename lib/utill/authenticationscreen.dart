@@ -167,6 +167,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                   ),
                 ],
               ),
+              /*
               Pinput(
                 length: 6,
                 showCursor: true,
@@ -174,6 +175,8 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                   code=value;
                 }
               ),
+
+               */
 
               SizedBox(
                 height: 40,
@@ -200,7 +203,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
                 height: 42,
                 child: ElevatedButton(
                   onPressed: () async {
-                    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthenticateScreen.verify, smsCode: code);
+                  //  PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthenticateScreen.verify, smsCode: code);
                    // await auth.signInWithCredential(credential);
 
                     Navigator.pushNamed(context, MyRoutes.farmingcreen);
