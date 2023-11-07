@@ -8,6 +8,7 @@ import 'done.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
+  static String verify="";
 
 
   @override
@@ -283,7 +284,7 @@ class SignupScreenState extends State<SignupScreen> {
                         verificationFailed: (FirebaseAuthException e){},
                         codeSent: (String verificationId, int? resendToken) async{
 
-                          //AuthenticateScreen.verify=verificationId;
+                          SignupScreen.verify=verificationId;
                           _resendToken = resendToken;
                          // Navigator.pushNamed(context, MyRoutes.authentication);
                           Navigator.pushNamed(context, MyRoutes.authentication, arguments: phone);
