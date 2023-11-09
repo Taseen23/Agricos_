@@ -1,3 +1,4 @@
+import 'package:agricos/utill/database.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,33 @@ class FarmdScreen extends StatefulWidget {
 }
 
 class FarmdScreenState extends State<FarmdScreen> {
+  uploadData()async{
+    Map<String, dynamic> uploaddata={
+      "Crop Type": croptype.text,
+      "Soil Type" : soiltype.text,
+      "Climate": cliamtetype.text,
+      "Farm Size and Layout": farmsizeandlayout.text,
+      "Past and disease" : pastanddeasse.text,
+      "Farming equipment" : farmingequipment.text,
+      "Economic information":econoinfo.text,
+
+
+
+    };
+    DatabaseMetgods().addUserDetails(uploaddata);
+  }
+  TextEditingController croptype = new TextEditingController();
+  TextEditingController soiltype = new TextEditingController();
+  TextEditingController cliamtetype = new TextEditingController();
+  TextEditingController farmsizeandlayout = new TextEditingController();
+  TextEditingController pastanddeasse = new TextEditingController();
+  TextEditingController farmingequipment = new TextEditingController();
+  TextEditingController econoinfo = new TextEditingController();
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -281,6 +309,7 @@ class FarmdScreenState extends State<FarmdScreen> {
             // duration: Duration(seconds: 1),
             child: ElevatedButton(
               onPressed: () {
+                uploadData();
                 Navigator.pushNamed(context, MyRoutes.farmingcreen);
               },
               child: Text(
