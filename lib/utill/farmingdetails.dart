@@ -310,7 +310,7 @@ class FarmdScreenState extends State<FarmdScreen> {
             child: ElevatedButton(
               onPressed: () {
                 uploadData();
-                Navigator.pushNamed(context, MyRoutes.farmingcreen);
+                Navigator.pushNamed(context, MyRoutes.done);
               },
               child: Text(
                 "Submit",

@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'done.dart';
 import 'loginscreen.dart';
 
 void main()  async{
@@ -49,6 +50,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.signupscreen: (Context) => SignupScreen(),
         MyRoutes.farmingcreen: (Context) => FarmdScreen(),
         MyRoutes.authentication: (Context) => AuthenticateScreen(phoneNumber: "",),
+        MyRoutes.done: (Context) => Done(),
+
 
 
 

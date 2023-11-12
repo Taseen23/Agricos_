@@ -5,6 +5,7 @@ class MyRoutes {
   static String signupscreen = "/signupscreen";
   static String farmingcreen = "/farmingdetails";
   static String authentication = "/authenticationscreen";
+  static String done = "/done";
 
 
 
