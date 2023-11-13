@@ -13,26 +13,26 @@ class FarmdScreen extends StatefulWidget {
 class FarmdScreenState extends State<FarmdScreen> {
   uploadData()async{
     Map<String, dynamic> uploaddata={
-      "Crop Type": croptype.text,
-      "Soil Type" : soiltype.text,
-      "Climate": cliamtetype.text,
-      "Farm Size and Layout": farmsizeandlayout.text,
-      "Past and disease" : pastanddeasse.text,
-      "Farming equipment" : farmingequipment.text,
-      "Economic information":econoinfo.text,
+      "Crop Type": croptypecontroller.text,
+      "Soil Type" : soiltypecontroller.text,
+      "Climate": cliamtetypecontroller.text,
+      "Farm Size and Layout": farmsizeandlayoutcontroller.text,
+      "Past and disease" : pastanddeassecontroller.text,
+      "Farming equipment" : farmingequipmentcontroller.text,
+      "Economic information":econoinfocontroller.text,
 
 
 
     };
     DatabaseMetgods().addUserDetails(uploaddata);
   }
-  TextEditingController croptype = new TextEditingController();
-  TextEditingController soiltype = new TextEditingController();
-  TextEditingController cliamtetype = new TextEditingController();
-  TextEditingController farmsizeandlayout = new TextEditingController();
-  TextEditingController pastanddeasse = new TextEditingController();
-  TextEditingController farmingequipment = new TextEditingController();
-  TextEditingController econoinfo = new TextEditingController();
+  TextEditingController croptypecontroller = new TextEditingController();
+  TextEditingController soiltypecontroller = new TextEditingController();
+  TextEditingController cliamtetypecontroller = new TextEditingController();
+  TextEditingController farmsizeandlayoutcontroller = new TextEditingController();
+  TextEditingController pastanddeassecontroller = new TextEditingController();
+  TextEditingController farmingequipmentcontroller = new TextEditingController();
+  TextEditingController econoinfocontroller = new TextEditingController();
 
 
 
@@ -208,7 +208,7 @@ class FarmdScreenState extends State<FarmdScreen> {
                 },
 
                */
-            obscureText: true,
+            //obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -232,7 +232,7 @@ class FarmdScreenState extends State<FarmdScreen> {
           width: 300,
           child: TextFormField(
             // controller: _confirmpasswordController,
-            obscureText: true,
+            //obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -256,7 +256,7 @@ class FarmdScreenState extends State<FarmdScreen> {
           width: 300,
           child: TextFormField(
             // controller: _confirmpasswordController,
-            obscureText: true,
+            //obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -280,7 +280,7 @@ class FarmdScreenState extends State<FarmdScreen> {
           width: 300,
           child: TextFormField(
             // controller: _confirmpasswordController,
-            obscureText: true,
+          //  obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),

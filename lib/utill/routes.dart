@@ -6,6 +6,7 @@ class MyRoutes {
   static String farmingcreen = "/farmingdetails";
   static String authentication = "/authenticationscreen";
   static String done = "/done";
+  static String dashboard = "/dashboard";
 
 
 

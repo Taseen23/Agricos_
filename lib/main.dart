@@ -1,3 +1,4 @@
+import 'package:agricos/dashboard.dart';
 import 'package:agricos/shared/constants.dart';
 import 'package:agricos/signupscreen.dart';
 import 'package:agricos/trigger.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: triggerScreen(),
+      home: DashBoard(),
       routes: {
 
 
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.farmingcreen: (Context) => FarmdScreen(),
         MyRoutes.authentication: (Context) => AuthenticateScreen(phoneNumber: "",),
         MyRoutes.done: (Context) => Done(),
+        MyRoutes.dashboard: (Context) => DashBoard(),
 
 
 
