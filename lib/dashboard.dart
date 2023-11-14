@@ -46,8 +46,33 @@ class DashBoardState extends State<DashBoard> {
               //width: 354,
             ),
           ]),
-        ]))
+        ])),
+        const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+        Container(
+          width: 100,
+          height: 100,
+          //color: Colors.white,
+          child: Text("taseen"),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(2),
+              border: Border.all(
+               // width: 1,
+                //color: Colors.white70
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.white70,
+                  blurRadius: 11,
+                  spreadRadius: 15,
+
+                )
+              ]
+
+            )
+        )
       ]),
+
     ));
   }
 }
