@@ -47,6 +47,248 @@ class DashBoardState extends State<DashBoard> {
             ),
           ]),
         ])),
+        Text("Dashboard",style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 40,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("My Crops"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 40,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Profiles"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+          ]),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 33,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Crop Doctor"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 50,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Seller"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+          ]),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          child:
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 20,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Farming Book"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 2,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Transmission Lender"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+          ]),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          child:
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 40,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Daza Refer"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 40,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Calender"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+          ]),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 40,
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 0,
+                  horizontal: 0,
+                ),
+                // color: Colors.teal[100],
+                child: const Text("Contact Us"),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 1, color: Colors.white70),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        spreadRadius: 10,
+                      )
+                    ])),
+          ]),
+        ),
+        /*
         const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
         Container(
           width: 100,
@@ -71,8 +313,8 @@ class DashBoardState extends State<DashBoard> {
 
             )
         )
+        */
       ]),
-
     ));
   }
 }
