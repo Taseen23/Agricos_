@@ -2,14 +2,16 @@ import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class DashBoard extends StatefulWidget {
-  const DashBoard({super.key});
+import 'dashboard.dart';
+
+class crops extends StatefulWidget {
+  const crops({super.key});
 
   @override
-  State<DashBoard> createState() => DashBoardState();
+  State<crops> createState() => cropsState();
 }
 
-class DashBoardState extends State<DashBoard> {
+class cropsState extends State<crops> {
   searchUser(String experts) async {
     //  QuerySnapshot querySnapshot = await DatabaseMetgods().getthisInfo(name);
   }
@@ -31,7 +33,7 @@ class DashBoardState extends State<DashBoard> {
               ),
               label: Text(""),
               onPressed: () {
-                Navigator.pushNamed(context, MyRoutes.farmingcreen);
+                Navigator.pushNamed(context, MyRoutes.dashboard);
               },
               style:
                   ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFFFFF)),
@@ -47,10 +49,13 @@ class DashBoardState extends State<DashBoard> {
             ),
           ]),
         ])),
-        Text("Dashboard",style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),),
+        Text(
+          "Crops",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         SizedBox(
           height: 20,
         ),
@@ -60,66 +65,19 @@ class DashBoardState extends State<DashBoard> {
             Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 20,
-                  horizontal: 40,
+                  horizontal: 20,
                 ),
                 margin: EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: 0,
                 ),
                 // color: Colors.teal[100],
-                child: const Text("My Crops"),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: Colors.white70),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 5,
-                        spreadRadius: 10,
-                      )
-                    ])),
-            Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRoutes.orgsnicfood);
+                  },
+                  child: Text("Organic Food"),
                 ),
-                margin: EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 0,
-                ),
-                // color: Colors.teal[100],
-                child: const Text("Profiles"),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: Colors.white70),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 5,
-                        spreadRadius: 10,
-                      )
-                    ])),
-          ]),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 33,
-                ),
-                margin: EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 0,
-                ),
-                // color: Colors.teal[100],
-                child: const Text("Crop Doctor"),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -141,7 +99,7 @@ class DashBoardState extends State<DashBoard> {
                   horizontal: 0,
                 ),
                 // color: Colors.teal[100],
-                child: const Text("Seller"),
+                child: const Text("Rice"),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -156,22 +114,22 @@ class DashBoardState extends State<DashBoard> {
           ]),
         ),
         SizedBox(
-          height: 10,
+          height: 30,
         ),
         Container(
           child:
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 20,
-                  horizontal: 20,
+                  horizontal: 30,
                 ),
                 margin: EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: 0,
                 ),
                 // color: Colors.teal[100],
-                child: const Text("Farming Book"),
+                child: const Text("Vagetables"),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -186,66 +144,14 @@ class DashBoardState extends State<DashBoard> {
             Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 20,
-                  horizontal: 2,
+                  horizontal: 47,
                 ),
                 margin: EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: 0,
                 ),
                 // color: Colors.teal[100],
-                child: const Text("Transmission Lender"),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: Colors.white70),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 5,
-                        spreadRadius: 10,
-                      )
-                    ])),
-          ]),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          child:
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
-                ),
-                margin: EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 0,
-                ),
-                // color: Colors.teal[100],
-                child: const Text("Daza Refer"),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: Colors.white70),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 5,
-                        spreadRadius: 10,
-                      )
-                    ])),
-            Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 40,
-                ),
-                margin: EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 0,
-                ),
-                // color: Colors.teal[100],
-                child: const Text("Calender"),
+                child: const Text("Water"),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -260,7 +166,7 @@ class DashBoardState extends State<DashBoard> {
           ]),
         ),
         SizedBox(
-          height: 10,
+          height: 40,
         ),
         Container(
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -274,7 +180,7 @@ class DashBoardState extends State<DashBoard> {
                   horizontal: 0,
                 ),
                 // color: Colors.teal[100],
-                child: const Text("Contact Us"),
+                child: const Text("Soil"),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),

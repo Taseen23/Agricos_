@@ -11,15 +11,9 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child:  SingleChildScrollView(
-
-
-        child: Column(children: [
-          Row(children:[
-
-          ]
-          ),
-
+        child: SingleChildScrollView(
+            child: Column(children: [
+      Row(children: []),
       Image.asset(
         "assest/Images/JAGO_KISAN-removebg-preview copy.png",
         height: 255,
@@ -126,7 +120,6 @@ class LoginScreenState extends State<LoginScreen> {
               width: 21,
               height: 20,
             ),
-
           ])
           /*
           Image.asset(

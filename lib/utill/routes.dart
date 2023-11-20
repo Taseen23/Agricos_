@@ -7,6 +7,9 @@ class MyRoutes {
   static String authentication = "/authenticationscreen";
   static String done = "/done";
   static String dashboard = "/dashboard";
+  static String insidedashboard= "/insidedashboard";
+  static String orgsnicfood= "/organicfood";
+
 
 
 

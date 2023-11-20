@@ -1,4 +1,4 @@
-import 'package:agricos/utill/database.dart';
+import 'package:agricos/Function/database.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -310,7 +310,7 @@ class FarmdScreenState extends State<FarmdScreen> {
             child: ElevatedButton(
               onPressed: () {
                 uploadData();
-                Navigator.pushNamed(context, MyRoutes.done);
+                Navigator.pushNamed(context, MyRoutes.dashboard);
               },
               child: Text(
                 "Submit",

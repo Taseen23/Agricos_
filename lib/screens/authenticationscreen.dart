@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../signupscreen.dart';
+import 'signupscreen.dart';
 
 class AuthenticateScreen extends StatefulWidget {
   const AuthenticateScreen({super.key, required phoneNumber});
@@ -45,7 +45,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
     return Material(
         child: SingleChildScrollView(
             child: Column(children: [
-      Row(children: [
+              Row(children: [
         //width: 20,
         ElevatedButton.icon(
           icon: Icon(
@@ -72,15 +72,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
       SizedBox(
         height: 20.0,
       ),
-      /*
 
-              Image.asset(
-                "assest/Images/JAGO_KISAN-removebg-preview copy.png",
-                height: 316,
-                width: 354,
-              ),
-
-               */
 
       Positioned(
         top: 10, // Adjust the top and left values to position the text
@@ -107,9 +99,6 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
       ),
       Row(
         children: [
-          SizedBox(
-            width: 20,
-          ),
           Pinput(
             length: 6,
             //pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
@@ -118,92 +107,8 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
               code = value;
             },
           ),
-          /*
-          SizedBox(
-            width: 62,
-            height: 59,
-            child: TextFormField
-                //Padding(padding: Size.fromWidth(20), Size.fromHeight(30),
-                (
-              //controller: _firstnameController,
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF000000)),
-                    //border: 1px solid #
-
-                    /*
-                enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-            Color(0xFF31F920)
-
-               */
-                    borderRadius: BorderRadius.circular(16)),
-
-                // focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          SizedBox(
-            width: 62,
-            height: 59,
-            child: TextFormField
-                //Padding(padding: Size.fromWidth(20), Size.fromHeight(30),
-                (
-              //controller: _firstnameController,
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(16)),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          SizedBox(
-            width: 62,
-            height: 59,
-            child: TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(16)),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
-          SizedBox(
-            width: 62,
-            height: 59,
-            child: TextFormField
-                //Padding(padding: Size.fromWidth(20), Size.fromHeight(30),
-                (
-              //controller: _firstnameController,
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(16)),
-              ),
-            ),
-          ),
-
-           */
         ],
       ),
-
-
-
-
-
-
 
       SizedBox(
         height: 40,
@@ -225,7 +130,6 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
           color: Colors.black87,
         ),
       ),
-
 
       SizedBox(
         height: 40,

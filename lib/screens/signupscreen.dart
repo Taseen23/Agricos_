@@ -1,10 +1,10 @@
-import 'package:agricos/utill/authenticationscreen.dart';
+import 'package:agricos/screens/authenticationscreen.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'done.dart';
+import '../done.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
