@@ -2,17 +2,16 @@ import 'package:agricos/screens/dashboard/dashboard.dart';
 import 'package:agricos/screens/dashboard/organicfood.dart';
 import 'package:agricos/shared/constants.dart';
 import 'package:agricos/screens/signupscreen.dart';
-import 'package:agricos/screens/trigger.dart';
 import 'package:agricos/screens/authenticationscreen.dart';
 import 'package:agricos/screens/farmingdetails.dart';
 import 'package:agricos/utill/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'done.dart';
-import 'screens/dashboard/insidemycrops.dart';
+import 'Screens/dashboard/insidemycrops.dart';
+
+import 'Screens/trigger.dart';
 import 'screens/loginscreen.dart';
 
 void main()  async{
@@ -44,19 +43,18 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: triggerScreen(),
+      home: TriggerScreen(),
       routes: {
 
 
-        MyRoutes.triggerpage: (Context) => triggerScreen(),
-        MyRoutes.loginscreen: (Context) => LoginScreen(),
-        MyRoutes.signupscreen: (Context) => SignupScreen(),
-        MyRoutes.farmingcreen: (Context) => FarmdScreen(),
-        MyRoutes.authentication: (Context) => AuthenticateScreen(phoneNumber: "",),
-        MyRoutes.done: (Context) => Done(),
-        MyRoutes.dashboard: (Context) => DashBoard(),
-        MyRoutes.insidedashboard: (Context) => crops(),
-        MyRoutes.orgsnicfood: (Context) => OgFood(),
+        MyRoutes.triggerpage: (context) => TriggerScreen(),
+        MyRoutes.loginscreen: (context) => LoginScreen(),
+        MyRoutes.signupscreen: (context) => SignupScreen(),
+        MyRoutes.farmingcreen: (context) => FarmdScreen(),
+        MyRoutes.authentication: (context) => AuthenticateScreen(phoneNumber: "",),
+        MyRoutes.dashboard: (context) => DashBoard(),
+        MyRoutes.insidedashboard: (context) => Crops(),
+        MyRoutes.orgsnicfood: (context) => OgFood(),
 
 
 
