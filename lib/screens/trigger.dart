@@ -1,15 +1,20 @@
 import 'package:agricos/utill/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class triggerScreen extends StatelessWidget {
+class TriggerScreen extends StatelessWidget {
+  const TriggerScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Material(
         child: SingleChildScrollView(
             child: Column(
       children: [
-        SizedBox(height: 60.0),
+        Image.asset("assest/Images/1.jpeg",
+          height: 150,
+        ),
+
+
         Text(
           'Welcome To',
           textAlign: TextAlign.center,
@@ -20,10 +25,10 @@ class triggerScreen extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 1.0),
-        Image.asset("assest/Images/pic1.png",
+        Image.asset("assest/Images/logo.jpeg",
             //scale: 0.8,
-            height: 223,
-            width: 232),
+            height: 150,
+            width: 100),
 
         // Text("Welcome To"),
 
@@ -41,13 +46,15 @@ class triggerScreen extends StatelessWidget {
                 color: Color(0xFF2D6F09),
               ),
             )),
-        Container(
+        SizedBox(
           height: 62.5,
           width: 329,
           child: ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, MyRoutes.loginscreen);
             },
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF31F920), shape: RoundedRectangleBorder()),
             child: Text(
               "Get Started",
               style: TextStyle(
@@ -56,8 +63,6 @@ class triggerScreen extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            style: ElevatedButton.styleFrom(
-                primary: Color(0xFF31F920), shape: RoundedRectangleBorder()),
           ),
         ),
       ],

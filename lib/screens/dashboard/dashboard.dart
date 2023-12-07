@@ -19,6 +19,9 @@ class DashBoardState extends State<DashBoard> {
     return Material(
         child: SingleChildScrollView(
       child: Column(children: [
+        Image.asset("assest/Images/1.jpeg",
+          height: 150,
+        ),
         Container(
             child: Column(children: [
           Row(children: [
@@ -36,12 +39,16 @@ class DashBoardState extends State<DashBoard> {
               style:
                   ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFFFFF)),
             ),
-            //  Icon(Icons.arrow_circle_left),
+            //
+            //  Icon(Icons.arrow_circle_left),\
+            SizedBox(
+              width: 55,
+            ),
 
             Image.asset(
-              "assest/Images/JAGO_KISAN-removebg-preview copy.png",
-              height: 316,
-              width: 250,
+              "assest/Images/logo.jpeg",
+              height: 150,
+              width: 150,
 
               //width: 354,
             ),
@@ -296,32 +303,7 @@ class DashBoardState extends State<DashBoard> {
                     ])),
           ]),
         ),
-        /*
-        const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-        Container(
-          width: 100,
-          height: 100,
-          //color: Colors.white,
-          child: Text("taseen"),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(2),
-              border: Border.all(
-               // width: 1,
-                //color: Colors.white70
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white70,
-                  blurRadius: 11,
-                  spreadRadius: 15,
 
-                )
-              ]
-
-            )
-        )
-        */
       ]),
     ));
   }

@@ -1,5 +1,5 @@
 import 'package:agricos/utill/routes.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class OgFood extends StatefulWidget {
@@ -10,17 +10,17 @@ class OgFood extends StatefulWidget {
 }
 
 class OgFoodState extends State<OgFood> {
-  searchUser(String experts) async {
-    //  QuerySnapshot querySnapshot = await DatabaseMetgods().getthisInfo(name);
-  }
+
 
   @override
   Widget build(BuildContext context) {
     return Material(
         child: SingleChildScrollView(
           child: Column(children: [
-          Container(
-          child: Column(children: [
+            Image.asset("assest/Images/1.jpeg",
+              height: 150,
+            ),
+          Column(children: [
             Row(children: [
             //width: 20,
             ElevatedButton.icon(
@@ -36,17 +36,20 @@ class OgFoodState extends State<OgFood> {
           style:
           ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFFFFF)),
         ),
-        //  Icon(Icons.arrow_circle_left),
+        //Icon(Icons.arrow_circle_left),
+              SizedBox(
+                width: 50,
+              ),
 
         Image.asset(
-          "assest/Images/JAGO_KISAN-removebg-preview copy.png",
-          height: 316,
-          width: 250,
+          "assest/Images/logo.jpeg",
+          height: 150,
+          width: 150,
 
           //width: 354,
         ),
         ]),
-    ])),
+    ]),
     ]
 
 

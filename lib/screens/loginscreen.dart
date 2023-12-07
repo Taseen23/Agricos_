@@ -1,8 +1,9 @@
 import 'package:agricos/utill/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   LoginScreenState createState() => LoginScreenState();
 }
@@ -13,11 +14,15 @@ class LoginScreenState extends State<LoginScreen> {
     return Material(
         child: SingleChildScrollView(
             child: Column(children: [
-      Row(children: []),
       Image.asset(
-        "assest/Images/JAGO_KISAN-removebg-preview copy.png",
-        height: 255,
-        width: 250,
+        "assest/Images/1.jpeg",
+        height: 150,
+      ),
+      const Row(children: []),
+      Image.asset(
+        "assest/Images/logo.jpeg",
+        height: 100,
+        width: 200,
       ),
       Container(
         width: 312, // Set the width of the Container
@@ -31,7 +36,7 @@ class LoginScreenState extends State<LoginScreen> {
         ),
         child: Column(children: [
           Image.asset("assest/Images/Farmer image for profile 1.jpg"),
-          Container(
+          SizedBox(
             width: 223.01,
             child: TextFormField(
               obscureText: true,
@@ -48,7 +53,7 @@ class LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: 223.01,
             child: TextFormField(
               obscureText: true,
@@ -66,7 +71,7 @@ class LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             //alignment: Alignment.topRight,
             width: 110,
             height: 18,
@@ -80,7 +85,7 @@ class LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(height: 20.0),
-          Container(
+          SizedBox(
             height: 17,
             width: 86,
             child: Text(
@@ -121,33 +126,19 @@ class LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
           ])
-          /*
-          Image.asset(
-            "assest/Images/facebook.jpg",
-            width: 21,
-            height: 20,
-          ),
-          Image.asset(
-            "assest/Images/Google.jpg",
-            width: 21,
-            height: 20,
-          ),
-          Image.asset(
-            "assest/Images/Tweeter.jpg",
-            width: 21,
-            height: 20,
-          ),
-
-           */
         ]),
       ),
-      Container(
+      SizedBox(
         width: 231,
         height: 49,
         child: ElevatedButton(
           onPressed: () {
             Navigator.pushNamed(context, MyRoutes.signupscreen);
           },
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF16FC02),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30))),
           child: Text(
             "LOGIN",
             style: TextStyle(
@@ -156,11 +147,34 @@ class LoginScreenState extends State<LoginScreen> {
               fontSize: 24,
             ),
           ),
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      SizedBox(
+        width: 231,
+        height: 49,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.signupscreen);
+          },
           style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF16FC02),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30))),
+          child: Text(
+            "Sign Up",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+            ),
+          ),
         ),
+      ),
+      SizedBox(
+        height: 50,
       )
     ])));
   }
