@@ -2,6 +2,8 @@ import 'package:agricos/utill/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../Function/database.dart';
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -12,6 +14,37 @@ class SignupScreen extends StatefulWidget {
 }
 
 class SignupScreenState extends State<SignupScreen> {
+
+  final FirebaseAuthService _auth = FirebaseAuthService() ;
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmpasswordController = TextEditingController();
+  @override
+
+  void dispose(){
+    super.dispose();
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+  void signup() async{
+    String username= _usernameController.text;
+    String email= _emailController.text;
+    String password= _passwordController.text;
+  //  String confirmpass = _confirmpasswordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    if (user!= null){
+      print("User is successfully created");
+      Navigator.pushNamed(context, MyRoutes.loginscreen);
+
+    } else {
+      print("Some error happened");
+    }
+
+  }
+
   static String verify = "";
 
   final TextEditingController phoneNumberController = TextEditingController();
@@ -52,7 +85,7 @@ class SignupScreenState extends State<SignupScreen> {
           child: TextFormField
               //Padding(padding: Size.fromWidth(20), Size.fromHeight(30),
               (
-            //controller: _firstnameController,
+            controller: _usernameController,
 
             decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -72,7 +105,7 @@ class SignupScreenState extends State<SignupScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
-            //controller: _lastnameController,
+            controller: _emailController,
             decoration: InputDecoration(
               //Icon(Icons.account_circle) ,
               border: OutlineInputBorder(
@@ -108,6 +141,7 @@ class SignupScreenState extends State<SignupScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+            controller: _passwordController,
             obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -159,6 +193,8 @@ class SignupScreenState extends State<SignupScreen> {
                   timeout: const Duration(seconds: 25),
                   codeAutoRetrievalTimeout: (String verification) {},
                 );
+                signup();
+
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF16FC02),

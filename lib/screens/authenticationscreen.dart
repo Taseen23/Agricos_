@@ -128,7 +128,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
             try {
               // await auth.signInWithCredential(credential);
 
-              Navigator.pushNamed(context, MyRoutes.farmingcreen);
+              Navigator.pushNamed(context, MyRoutes.loginscreen);
             } catch (e) {
               if (kDebugMode) {
                 print("wrong otp");

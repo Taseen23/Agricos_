@@ -1,5 +1,8 @@
 import 'package:agricos/utill/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../Function/database.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,6 +12,33 @@ class LoginScreen extends StatefulWidget {
 }
 
 class LoginScreenState extends State<LoginScreen> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  // TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    //_usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+
+  void signin() async {
+    //String username= _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    if (user != null) {
+      print("User is succesfully signdin");
+      Navigator.pushNamed(context, MyRoutes.dashboard);
+    } else {
+      print("Some error happened");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -39,6 +69,7 @@ class LoginScreenState extends State<LoginScreen> {
           SizedBox(
             width: 223.01,
             child: TextFormField(
+              controller: _emailController,
               obscureText: true,
               decoration: InputDecoration(
                 icon: Icon(
@@ -56,6 +87,7 @@ class LoginScreenState extends State<LoginScreen> {
           SizedBox(
             width: 223.01,
             child: TextFormField(
+              controller: _passwordController,
               obscureText: true,
               decoration: const InputDecoration(
                 fillColor: Colors.white,
@@ -132,9 +164,7 @@ class LoginScreenState extends State<LoginScreen> {
         width: 231,
         height: 49,
         child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, MyRoutes.signupscreen);
-          },
+          onPressed: signin,
           style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF16FC02),
               shape: RoundedRectangleBorder(
@@ -157,6 +187,7 @@ class LoginScreenState extends State<LoginScreen> {
         height: 49,
         child: ElevatedButton(
           onPressed: () {
+
             Navigator.pushNamed(context, MyRoutes.signupscreen);
           },
           style: ElevatedButton.styleFrom(
