@@ -13,22 +13,20 @@ class DatabaseMetgods {
         .collection("Users")
         .doc()
         .set(userinfoMap);
+
+  }
+  Future addFarmerDetails(Map<String, dynamic> userinfoMap) async {
+    return await FirebaseFirestore.instance
+        .collection("Farmer Details")
+        .doc()
+        .set(userinfoMap);
+
   }
 
-  Future<QuerySnapshot> getthisUserInfo(String name) async {
-    return await FirebaseFirestore.instance
-        .collection("Users")
-        .where("Crop Type", isEqualTo: name)
-        .get();
-  }
+
 }
 
-  Future<QuerySnapshot> getthisfarmerInfo(String experts)async{
-    return await FirebaseFirestore.instance
-        .collection("Veg_experts")
-        .where("exertise", isEqualTo: experts)
-        .get();
-  }
+
 class FirebaseAuthService{
   FirebaseAuth _auth = FirebaseAuth.instance;
   Future<User?> signUpWithEmailAndPassword(String email, String password)async{
@@ -41,6 +39,7 @@ class FirebaseAuthService{
     return null;
 
   }
+
   Future<User?> signInWithEmailAndPassword(String email, String password)async{
     try{
       UserCredential credential=await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -54,27 +53,6 @@ class FirebaseAuthService{
 
 
 }
-  /*
-  Future getData() async{
-    try {
-      await downloadURLExample();
-      return downloadURL;
-    }
-      catch (e){
-      debugPrint("Error -$e");
-      return null;
 
-      }
-    }
-
-    Future<void> downloadURLExample()async{
-     downloadURL = await FirebaseStorage.instance
-        .ref()
-        .child("image")
-        .getDownloadURL();
-    debugPrint(downloadURL.toString());
-  }
-
-   */
 
 
