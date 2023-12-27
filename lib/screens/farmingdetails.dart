@@ -21,17 +21,15 @@ class FarmdScreenState extends State<FarmdScreen> {
       "Farming equipment": farmingequipmentcontroller.text,
       "Economic information": econoinfocontroller.text,
     };
-    DatabaseMetgods().addUserDetails(uploaddata);
+    DatabaseMetgods().addFarmerDetails(uploaddata);
   }
 
   TextEditingController croptypecontroller = new TextEditingController();
   TextEditingController soiltypecontroller = new TextEditingController();
   TextEditingController cliamtetypecontroller = new TextEditingController();
-  TextEditingController farmsizeandlayoutcontroller =
-      new TextEditingController();
+  TextEditingController farmsizeandlayoutcontroller = new TextEditingController();
   TextEditingController pastanddeassecontroller = new TextEditingController();
-  TextEditingController farmingequipmentcontroller =
-      new TextEditingController();
+  TextEditingController farmingequipmentcontroller = new TextEditingController();
   TextEditingController econoinfocontroller = new TextEditingController();
 
   @override
@@ -46,25 +44,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         Container(
             child: Column(
           children: [
-            Row(children: [
-              //width: 20,
-              ElevatedButton.icon(
-                icon: Icon(
-                  Icons.arrow_circle_left,
-                  color: Color(0xFF04FF2F),
-                  size: 30.0,
-                ),
-                label: Text(""),
-                onPressed: () {
-                  Navigator.pushNamed(context, MyRoutes.authentication);
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFFFFFFFF)),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-              //  Icon(Icons.arrow_circle_left),
+
 
               Image.asset(
                 "assest/Images/logo.jpeg",
@@ -73,7 +53,7 @@ class FarmdScreenState extends State<FarmdScreen> {
 
                 //width: 354,
               ),
-            ]),
+
 
             Positioned(
               top: 10,
@@ -87,12 +67,12 @@ class FarmdScreenState extends State<FarmdScreen> {
                   color: Colors.black87,
                 ),
               ),
-            ),
+
 
             //Text("Farming Details"),
-          ],
+            )],
         )),
-        Container(),
+
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
         ),
@@ -102,6 +82,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+            controller: croptypecontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -117,7 +98,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
-            //controller: _lastnameController,
+            controller: soiltypecontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -133,6 +114,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+            controller: cliamtetypecontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -148,6 +130,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+            controller: farmsizeandlayoutcontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -163,7 +146,8 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
-            obscureText: true,
+              controller: pastanddeassecontroller,
+            //obscureText: true,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -179,6 +163,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+              controller: farmingequipmentcontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),
@@ -194,6 +179,7 @@ class FarmdScreenState extends State<FarmdScreen> {
         SizedBox(
           width: 300,
           child: TextFormField(
+              controller:econoinfocontroller,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                   borderSide: BorderSide(color: Color(0xFF31F920)),

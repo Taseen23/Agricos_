@@ -34,7 +34,7 @@ class LoginScreenState extends State<LoginScreen> {
     User? user = await _auth.signInWithEmailAndPassword(email, password);
     if (user != null) {
       print("User is succesfully signdin");
-      Navigator.pushNamed(context, MyRoutes.dashboard);
+      Navigator.pushNamed(context, MyRoutes.farmingcreen);
     } else {
       print("Some error happened");
     }
@@ -70,17 +70,26 @@ class LoginScreenState extends State<LoginScreen> {
             width: 223.01,
             child: TextFormField(
               controller: _emailController,
-              obscureText: true,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+
               decoration: InputDecoration(
                 icon: Icon(
                   Icons.person,
                   color: Colors.white,
                 ),
-                hintText: "Enter Username",
+
                 labelText: "Enter Your e-mail",
                 labelStyle: TextStyle(
-                  color: Colors.white, // Set the label text color to red
+                  color: Colors.white,
                 ),
+                hintText: "Enter Username",
+                hintStyle: TextStyle(
+                  color: Colors.white,
+                ),
+
+
               ),
             ),
           ),
@@ -88,6 +97,9 @@ class LoginScreenState extends State<LoginScreen> {
             width: 223.01,
             child: TextFormField(
               controller: _passwordController,
+              style: TextStyle(
+                color: Colors.white,
+              ),
               obscureText: true,
               decoration: const InputDecoration(
                 fillColor: Colors.white,
