@@ -11,14 +11,25 @@ class OgFood extends StatefulWidget {
 }
 
 class OgFoodState extends State<OgFood> {
-  Future<List<Map<String, dynamic>>> fetchDataFromFirebase() async {
-    QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await FirebaseFirestore.instance
-            .collection('Organic Food') // Replace with your collection name
-            .get();
+  final _userStream =
+  FirebaseFirestore.instance.collection("Organic Food").snapshots();
+  /*Future<List<Map<String, dynamic>>> fetchDataFromFirebase() async {
+    try {
+      QuerySnapshot<Map<String, dynamic>> querySnapshot =
+      await FirebaseFirestore.instance
+          .collection('Organic Food') // Replace with your collection name
+          .get();
 
-    return querySnapshot.docs.map((doc) => doc.data()).toList();
+      return querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
+    } catch (e) {
+      print('Error fetching data: $e');
+      // You can throw the error or return an empty list based on your error handling strategy
+      throw e;
+    }
   }
+
+   */
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,32 +72,35 @@ class OgFoodState extends State<OgFood> {
               ),
             ]),
             SizedBox(
-              height: 20,
+              height: 300,
             ),
             Container(
               height: 20,
-              child: FutureBuilder(
-                future: fetchDataFromFirebase(),
-                builder: (context,
-                    AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
-                  } else if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    // Display your data here
-                    return ListView.builder(
-                      itemCount: snapshot.data!.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text(snapshot.data?[index]['Name']),
+              child: StreamBuilder(
+                  stream: _userStream,
+                  builder:
+                      (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return const Text('Connection Errors');
+                    }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Text('Loading...');
+                    }
 
-                        );
-                      },
-                    );
-                  }
-                },
-              ),
+                    var docs = snapshot.data!.docs;
+                    //  return Text('${docs.length}');
+                    return ListView.builder(
+                        itemCount: docs.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            child:ListTile(
+                              leading: const Icon(Icons.account_circle),
+                              title: Text(snapshot.data!.docs[index].get('Name')),
+                              //subtitle: Text('${docs[index]['BPM']} '),
+                            ),
+                          );
+                        });
+                  })
             ),
           ]),
         ])),

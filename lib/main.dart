@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      home: TriggerScreen(),
+      home: OgFood(),
       routes: {
 
 
