@@ -13,22 +13,6 @@ class OgFood extends StatefulWidget {
 class OgFoodState extends State<OgFood> {
   final _userStream =
   FirebaseFirestore.instance.collection("Organic Food").snapshots();
-  /*Future<List<Map<String, dynamic>>> fetchDataFromFirebase() async {
-    try {
-      QuerySnapshot<Map<String, dynamic>> querySnapshot =
-      await FirebaseFirestore.instance
-          .collection('Organic Food') // Replace with your collection name
-          .get();
-
-      return querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
-    } catch (e) {
-      print('Error fetching data: $e');
-      // You can throw the error or return an empty list based on your error handling strategy
-      throw e;
-    }
-  }
-
-   */
 
 
   @override
@@ -58,7 +42,6 @@ class OgFoodState extends State<OgFood> {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFFFFFFF)),
               ),
-              //Icon(Icons.arrow_circle_left),
               SizedBox(
                 width: 50,
               ),
@@ -88,7 +71,7 @@ class OgFoodState extends State<OgFood> {
                     }
 
                     var docs = snapshot.data!.docs;
-                    //  return Text('${docs.length}');
+
                     return ListView.builder(
                         itemCount: docs.length,
                         itemBuilder: (context, index) {
@@ -96,7 +79,7 @@ class OgFoodState extends State<OgFood> {
                             child:ListTile(
                               leading: const Icon(Icons.account_circle),
                               title: Text(snapshot.data!.docs[index].get('Name')),
-                              //subtitle: Text('${docs[index]['BPM']} '),
+
                             ),
                           );
                         });

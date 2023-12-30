@@ -3,32 +3,34 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-
 class AuthenticateScreen extends StatefulWidget {
-  const AuthenticateScreen({super.key, required phoneNumber});
+  //final String phone;
+
+
+
+  const AuthenticateScreen({super.key, required phoneNumber,});
 
   @override
   AuthenticateScreenState createState() => AuthenticateScreenState();
 }
 
 class AuthenticateScreenState extends State<AuthenticateScreen> {
+  //final String? phone = ModalRoute.of(context)!.settings.arguments as String?;
   late final String phoneNumber;
 
   @override
   Widget build(BuildContext context) {
-
-
     return Material(
         child: SingleChildScrollView(
             child: Column(children: [
-              Image.asset(
-                "assest/Images/1.jpeg",
-                height: 150,
+      Image.asset(
+        "assest/Images/1.jpeg",
+        height: 150,
 
-                //width: 354,
-              ),
+        //width: 354,
+      ),
 
-              Row(children: [
+      Row(children: [
         //width: 20,
         ElevatedButton.icon(
           icon: Icon(
@@ -55,15 +57,10 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
           //width: 354,
         ),
       ]),
-      SizedBox(
-        height: 20.0,
-      ),
 
 
-      Positioned(
-        top: 10, // Adjust the top and left values to position the text
-        left: 10,
-        child: Text(
+
+         Text(
           "Verify Phone",
           style: TextStyle(
             fontSize: 30,
@@ -71,7 +68,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
             color: Colors.black87,
           ),
         ),
-      ),
+
       Text(
         "Code Sent to 01716813243",
         style: TextStyle(
@@ -89,8 +86,7 @@ class AuthenticateScreenState extends State<AuthenticateScreen> {
             length: 6,
             //pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
             showCursor: true,
-            onChanged: (value) {
-            },
+            onChanged: (value) {},
           ),
         ],
       ),

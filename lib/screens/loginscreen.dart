@@ -14,20 +14,20 @@ class LoginScreen extends StatefulWidget {
 class LoginScreenState extends State<LoginScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
 
-  // TextEditingController _usernameController = TextEditingController();
+
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    //_usernameController.dispose();
+
     _emailController.dispose();
     _passwordController.dispose();
   }
 
   void signin() async {
-    //String username= _usernameController.text;
+
     String email = _emailController.text;
     String password = _passwordController.text;
 

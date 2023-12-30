@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../Function/database.dart';
+import 'authenticationscreen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -186,7 +187,7 @@ class SignupScreenState extends State<SignupScreen> {
                   verificationFailed: (FirebaseAuthException e) {},
                   codeSent: (String verificationId, int? resendToken) async {
                     SignupScreen.verify = verificationId;
-                    // Navigator.pushNamed(context, MyRoutes.authentication);
+
                     Navigator.pushNamed(context, MyRoutes.authentication,
                         arguments: phone);
                   },
